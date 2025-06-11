@@ -962,6 +962,21 @@
 				},
 				{
 					"name": "/images/:image_id/analysis - with Breed",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ddceaf95-ce10-44e0-9331-37b57277dace",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "4865070-3abb8956-10c0-44c2-bc75-32ca57812a32",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -979,13 +994,14 @@
 							}
 						],
 						"url": {
-							"raw": "{{endpoint}}v1/images/BkIEhN3pG",
+							"raw": "{{endpoint}}v1/images/1qv/analysis",
 							"host": [
 								"{{endpoint}}v1"
 							],
 							"path": [
 								"images",
-								"BkIEhN3pG"
+								"1qv",
+								"analysis"
 							],
 							"query": [
 								{
