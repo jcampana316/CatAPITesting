@@ -1021,13 +1021,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{endpoint}}v1/images/1qv/analysis",
+							"raw": "{{endpoint}}v1/images/MK-sYESvO/analysis",
 							"host": [
 								"{{endpoint}}v1"
 							],
 							"path": [
 								"images",
-								"1qv",
+								"MK-sYESvO",
 								"analysis"
 							],
 							"query": [
