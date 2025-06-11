@@ -2332,6 +2332,34 @@
 			"item": [
 				{
 					"name": "/breeds",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "177b0c43-3a7b-44cb-8dba-85a52e88d025",
+								"exec": [
+									"// count objects within array\r",
+									"//should match the value of limit variable \r",
+									"\r",
+									"//depending of Breed value, validate Id exists  \r",
+									"pm.test(\"Number objects within array match limit \", function () {\r",
+									"    \r",
+									"    \r",
+									"        var jsonDataArray;\r",
+									"        for ( var i=0; i < jsonData.length; i++  ){\r",
+									"                jsonDataArray = jsonData[i];\r",
+									"                for( var j = 0; j<jsonDataArray.length; j++ ) {\r",
+									"                    jsonDataArray[i].id.to.not.be(null);\r",
+									"                }\r",
+									"        }\r",
+									"    \r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "4865070-13f14485-a2ed-4044-8101-df703a886fdd",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
