@@ -1101,6 +1101,146 @@
 					]
 				},
 				{
+					"name": "/images/:image_id/analysis Copy",
+					"id": "4865070-bdae99bf-21ae-4a6f-bb81-7063a87b363e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{YOUR-API-KEY}}",
+								"description": "[optional]  will save this request to your account analytics\n"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}v1/images/BkIEhN3pG",
+							"host": [
+								"{{endpoint}}v1"
+							],
+							"path": [
+								"images",
+								"BkIEhN3pG"
+							],
+							"query": [
+								{
+									"key": "sub_id",
+									"value": "",
+									"description": "[optional] if you want to save this request to your account stats",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Get the raw analysis results for any uploaded image"
+					},
+					"response": [
+						{
+							"id": "4865070-9105e9a9-f225-46c0-973e-3ee6ce0e893c",
+							"name": "/images/:image_id/analysis",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{YOUR-API-KEY}}",
+										"description": "[optional]  will save this request to your account analytics\n"
+									}
+								],
+								"url": {
+									"raw": "{{endpoint}}v1/images/:image_id/analysis",
+									"host": [
+										"{{endpoint}}v1"
+									],
+									"path": [
+										"images",
+										":image_id",
+										"analysis"
+									],
+									"query": [
+										{
+											"key": "sub_id",
+											"value": "",
+											"description": "[optional] if you want to save this request to your account stats",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "image_id",
+											"value": "xxBaNrfM0"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "2826ms"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1385"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Oct 2023 04:46:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n    {\n        \"labels\": [\n            {\n                \"Name\": \"Animal\",\n                \"Confidence\": 99.90064239501953,\n                \"Instances\": [],\n                \"Parents\": []\n            },\n            {\n                \"Name\": \"Cat\",\n                \"Confidence\": 99.90064239501953,\n                \"Instances\": [\n                    {\n                        \"BoundingBox\": {\n                            \"Width\": 0.9043794274330139,\n                            \"Height\": 0.803057074546814,\n                            \"Left\": 0.024559099227190018,\n                            \"Top\": 0.15806715190410614\n                        },\n                        \"Confidence\": 97.5887680053711\n                    }\n                ],\n                \"Parents\": [\n                    {\n                        \"Name\": \"Animal\"\n                    },\n                    {\n                        \"Name\": \"Mammal\"\n                    },\n                    {\n                        \"Name\": \"Pet\"\n                    }\n                ]\n            },\n            {\n                \"Name\": \"Mammal\",\n                \"Confidence\": 99.90064239501953,\n                \"Instances\": [],\n                \"Parents\": [\n                    {\n                        \"Name\": \"Animal\"\n                    }\n                ]\n            },\n            {\n                \"Name\": \"Manx\",\n                \"Confidence\": 99.90064239501953,\n                \"Instances\": [],\n                \"Parents\": [\n                    {\n                        \"Name\": \"Animal\"\n                    },\n                    {\n                        \"Name\": \"Cat\"\n                    },\n                    {\n                        \"Name\": \"Mammal\"\n                    },\n                    {\n                        \"Name\": \"Pet\"\n                    }\n                ]\n            },\n            {\n                \"Name\": \"Pet\",\n                \"Confidence\": 99.90064239501953,\n                \"Instances\": [],\n                \"Parents\": [\n                    {\n                        \"Name\": \"Animal\"\n                    }\n                ]\n            },\n            {\n                \"Name\": \"Kitten\",\n                \"Confidence\": 98.19309997558594,\n                \"Instances\": [],\n                \"Parents\": [\n                    {\n                        \"Name\": \"Animal\"\n                    },\n                    {\n                        \"Name\": \"Cat\"\n                    },\n                    {\n                        \"Name\": \"Mammal\"\n                    },\n                    {\n                        \"Name\": \"Pet\"\n                    }\n                ]\n            },\n            {\n                \"Name\": \"Sleeping\",\n                \"Confidence\": 76.68528747558594,\n                \"Instances\": [],\n                \"Parents\": [\n                    {\n                        \"Name\": \"Person\"\n                    }\n                ]\n            },\n            {\n                \"Name\": \"Couch\",\n                \"Confidence\": 63.19022750854492,\n                \"Instances\": [],\n                \"Parents\": [\n                    {\n                        \"Name\": \"Furniture\"\n                    }\n                ]\n            },\n            {\n                \"Name\": \"Chair\",\n                \"Confidence\": 57.31343078613281,\n                \"Instances\": [],\n                \"Parents\": [\n                    {\n                        \"Name\": \"Furniture\"\n                    }\n                ]\n            },\n            {\n                \"Name\": \"Abyssinian\",\n                \"Confidence\": 57.038516998291016,\n                \"Instances\": [],\n                \"Parents\": [\n                    {\n                        \"Name\": \"Animal\"\n                    },\n                    {\n                        \"Name\": \"Cat\"\n                    },\n                    {\n                        \"Name\": \"Mammal\"\n                    },\n                    {\n                        \"Name\": \"Pet\"\n                    }\n                ]\n            }\n        ],\n        \"moderation_labels\": [],\n        \"vendor\": \"AWS Rekognition\",\n        \"image_id\": \"xxBaNrfM0\",\n        \"created_at\": \"2023-10-28T17:44:36.000Z\"\n    }\n]"
+						}
+					]
+				},
+				{
 					"name": "/images/ (Your uploads)",
 					"id": "4865070-2beb0b11-5163-4977-8320-2d2ae28347ca",
 					"protocolProfileBehavior": {
