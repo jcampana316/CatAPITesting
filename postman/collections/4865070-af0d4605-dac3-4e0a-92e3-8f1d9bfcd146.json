@@ -2352,8 +2352,7 @@
 									"                    jsonDataArray[i].id.to.not.be(null);\r",
 									"                }\r",
 									"        }\r",
-									"    \r",
-									""
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {}
