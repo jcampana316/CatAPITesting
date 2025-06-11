@@ -2350,7 +2350,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{endpoint}}v1/breeds?limit=5&page=0",
+							"raw": "{{endpoint}}v1/breeds?limit={{limit}}&page=0",
 							"host": [
 								"{{endpoint}}v1"
 							],
@@ -2360,7 +2360,7 @@
 							"query": [
 								{
 									"key": "limit",
-									"value": "5"
+									"value": "{{limit}}"
 								},
 								{
 									"key": "page",
