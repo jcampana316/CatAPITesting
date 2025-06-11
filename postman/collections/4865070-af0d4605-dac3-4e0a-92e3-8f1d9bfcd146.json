@@ -2158,10 +2158,15 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{YOUR-API-KEY}}",
+								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "{{endpoint}}v1/breeds?limit=10&page=0",
+							"raw": "{{endpoint}}v1/breeds?limit=5&page=0",
 							"host": [
 								"{{endpoint}}v1"
 							],
@@ -2171,7 +2176,7 @@
 							"query": [
 								{
 									"key": "limit",
-									"value": "10"
+									"value": "5"
 								},
 								{
 									"key": "page",
