@@ -2338,6 +2338,8 @@
 							"script": {
 								"id": "177b0c43-3a7b-44cb-8dba-85a52e88d025",
 								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"\r",
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
