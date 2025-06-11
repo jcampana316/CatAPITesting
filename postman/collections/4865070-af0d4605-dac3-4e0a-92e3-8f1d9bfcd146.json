@@ -2347,6 +2347,7 @@
 									"\r",
 									"//depending of Breed value, validate Id exists  \r",
 									"pm.test(\"Number objects within aray match limit \", function () {        \r",
+									"        console.log(\"jsonData.length :\"+ jsonData.length)\r",
 									"        var jsonDataArray;\r",
 									"        for ( var i=0; i < jsonData.length; i++  ){\r",
 									"                jsonDataArray = jsonData[i];\r",
