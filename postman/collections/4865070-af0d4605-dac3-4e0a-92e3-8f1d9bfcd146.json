@@ -993,6 +993,7 @@
 									"                jsonDataArray = jsonData[i];\r",
 									"                for( var j = 0; j<jsonDataArray.length; j++ ) {\r",
 									"                    jsonDataArray[i].Name.to.not.be(null);\r",
+									"                    jsonDataArray[i].Confidence.to.not.be(null);\r",
 									"                }\r",
 									"        }  \r",
 									"});\r",
