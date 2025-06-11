@@ -994,7 +994,7 @@
 									"        for ( var i=0; i < jsonData.length; i++  ){\r",
 									"                jsonDataArray = jsonData[i];\r",
 									"                for( var j = 0; j<jsonDataArray.length; j++ ) {\r",
-									"                    jsonDataArray[i].id.to.not.be(null);\r",
+									"                    jsonDataArray[i].Name.to.not.be(null);\r",
 									"                }\r",
 									"        }\r",
 									"    }\r",
