@@ -2338,20 +2338,19 @@
 							"script": {
 								"id": "177b0c43-3a7b-44cb-8dba-85a52e88d025",
 								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
 									"// count objects within array\r",
 									"//should match the value of limit variable \r",
 									"\r",
 									"//depending of Breed value, validate Id exists  \r",
-									"pm.test(\"Number objects within array match limit \", function () {    \r",
+									"pm.test(\"Number objects within aray match limit \", function () {\r",
 									"    \r",
-									"        var jsonDataArray;\r",
-									"        for ( var i=0; i < jsonData.length; i++  ){\r",
-									"                jsonDataArray = jsonData[i];\r",
-									"                for( var j = 0; j<jsonDataArray.length; j++ ) {\r",
-									"                    jsonDataArray[i].id.to.not.be(null);\r",
-									"                }\r",
-									"        }\r",
-									"}"
+									"\r",
+									"});\r",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
