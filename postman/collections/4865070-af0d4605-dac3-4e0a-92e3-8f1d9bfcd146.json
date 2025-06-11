@@ -1101,7 +1101,7 @@
 					]
 				},
 				{
-					"name": "/images/:image_id/analysis Copy",
+					"name": "/images/:image_id/analysis - no Breed",
 					"id": "4865070-bdae99bf-21ae-4a6f-bb81-7063a87b363e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
