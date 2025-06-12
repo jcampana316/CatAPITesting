@@ -2346,7 +2346,6 @@
 									"\r",
 									"// count objects within array\r",
 									"//should match the value of limit variable \r",
-									"pm.\r",
 									"//depending of Breed value, validate Id exists  \r",
 									"pm.test(\"Number objects within aray match limit \", function () {        \r",
 									"        //console.log(\"jsonData.length :\"+ jsonData.length) \r",
