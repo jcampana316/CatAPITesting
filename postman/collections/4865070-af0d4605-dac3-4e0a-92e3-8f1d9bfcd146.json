@@ -2530,7 +2530,7 @@
 					]
 				},
 				{
-					"name": "/breeds/:breed_id",
+					"name": "Get Breed by ID",
 					"id": "4865070-0fd6ee72-11e6-4c8d-94f3-fff0b41be085",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
