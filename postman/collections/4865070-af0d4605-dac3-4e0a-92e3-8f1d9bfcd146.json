@@ -2669,24 +2669,22 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{YOUR-API-KEY}}",
+								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "{{endpoint}}v1/breeds/:breed_id/facts",
+							"raw": "{{endpoint}}v1/breeds/abob/facts",
 							"host": [
 								"{{endpoint}}v1"
 							],
 							"path": [
 								"breeds",
-								":breed_id",
+								"abob",
 								"facts"
-							],
-							"variable": [
-								{
-									"id": "1909eaf0-aa36-47e7-a0e0-27a69f4bc3ae",
-									"key": "breed_id",
-									"value": "ragd"
-								}
 							]
 						}
 					},
