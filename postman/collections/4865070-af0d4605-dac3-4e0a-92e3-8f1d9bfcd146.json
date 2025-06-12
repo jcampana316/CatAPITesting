@@ -2349,9 +2349,12 @@
 									"//depending of Breed value, validate Id exists  \r",
 									"pm.test(\"Number objects within aray match limit \", function () {        \r",
 									"        //console.log(\"jsonData.length :\"+ jsonData.length) \r",
-									"        jsonData.length.to.be.equal(pm.globals.get('limit'));\r",
+									"        jsonData.length.to.be.equal(pm.variables.get(\"limit\"));\r",
 									"\r",
 									"});\r",
+									"\r",
+									"\r",
+									"\r",
 									""
 								],
 								"type": "text/javascript",
