@@ -1565,6 +1565,44 @@
 				},
 				{
 					"name": "/images/upload",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a66e5a63-6e8b-4983-90ee-86a6b7955e22",
+								"exec": [
+									"var schema = {\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"title\":\"Generated schema for Root\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"width\":{\"type\":\"number\"},\"height\":{\"type\":\"number\"},\"original_filename\":{\"type\":\"string\"},\"pending\":{\"type\":\"number\"},\"approved\":{\"type\":\"number\"}},\"required\":[\"id\",\"url\",\"width\",\"height\",\"original_filename\",\"pending\",\"approved\"]}\r",
+									"\r",
+									"\r",
+									"pm.variables.set(\"schema\", schema);\r",
+									"try {\r",
+									"    var schema = pm.variables.get(\"schema\");\r",
+									"  \r",
+									"    if(schema) {\r",
+									"        const jsonData = pm.response.json();\r",
+									"        if(jsonData) {\r",
+									"            var Ajv = require('ajv');\r",
+									"            ajv = new Ajv({ logger: console, allErrors: true });\r",
+									"  \r",
+									"            pm.test('Schema is valid', function() {\r",
+									"                var result = tv4.validateMultiple(jsonData, schema);\r",
+									"                console.log(result);\r",
+									"                pm.expect(result.valid).to.be.true;\r",
+									"            });\r",
+									"       }\r",
+									"    }\r",
+									"}\r",
+									"catch(e) {\r",
+									"    console.log(e);\r",
+									"}\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "4865070-dff885b7-8ec3-414a-98b4-54c4ffb3dade",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1592,7 +1630,7 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/Users/aden/Dropbox/7xcfo2doq4wb1.jpeg"
+									"src": "/E:/JC316LocalRepo/GitHub/catAPI/1.jpeg"
 								},
 								{
 									"key": "sub_id",
