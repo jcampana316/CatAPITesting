@@ -2571,6 +2571,48 @@
 				},
 				{
 					"name": "Get Breed by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "77ad33d5-28b9-44c0-ae79-2e9f96c82956",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var schema = {\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"title\":\"Generated schema for Root\",\"type\":\"object\",\"properties\":{\"weight\":{\"type\":\"object\",\"properties\":{\"imperial\":{\"type\":\"string\"},\"metric\":{\"type\":\"string\"}},\"required\":[\"imperial\",\"metric\"]},\"id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"cfa_url\":{\"type\":\"string\"},\"vetstreet_url\":{\"type\":\"string\"},\"vcahospitals_url\":{\"type\":\"string\"},\"temperament\":{\"type\":\"string\"},\"origin\":{\"type\":\"string\"},\"country_codes\":{\"type\":\"string\"},\"country_code\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"life_span\":{\"type\":\"string\"},\"indoor\":{\"type\":\"number\"},\"lap\":{\"type\":\"number\"},\"alt_names\":{\"type\":\"string\"},\"adaptability\":{\"type\":\"number\"},\"affection_level\":{\"type\":\"number\"},\"child_friendly\":{\"type\":\"number\"},\"dog_friendly\":{\"type\":\"number\"},\"energy_level\":{\"type\":\"number\"},\"grooming\":{\"type\":\"number\"},\"health_issues\":{\"type\":\"number\"},\"intelligence\":{\"type\":\"number\"},\"shedding_level\":{\"type\":\"number\"},\"social_needs\":{\"type\":\"number\"},\"stranger_friendly\":{\"type\":\"number\"},\"vocalisation\":{\"type\":\"number\"},\"experimental\":{\"type\":\"number\"},\"hairless\":{\"type\":\"number\"},\"natural\":{\"type\":\"number\"},\"rare\":{\"type\":\"number\"},\"rex\":{\"type\":\"number\"},\"suppressed_tail\":{\"type\":\"number\"},\"short_legs\":{\"type\":\"number\"},\"wikipedia_url\":{\"type\":\"string\"},\"hypoallergenic\":{\"type\":\"number\"},\"reference_image_id\":{\"type\":\"string\"}},\"required\":[\"weight\",\"id\",\"name\",\"cfa_url\",\"vetstreet_url\",\"vcahospitals_url\",\"temperament\",\"origin\",\"country_codes\",\"country_code\",\"description\",\"life_span\",\"indoor\",\"lap\",\"alt_names\",\"adaptability\",\"affection_level\",\"child_friendly\",\"dog_friendly\",\"energy_level\",\"grooming\",\"health_issues\",\"intelligence\",\"shedding_level\",\"social_needs\",\"stranger_friendly\",\"vocalisation\",\"experimental\",\"hairless\",\"natural\",\"rare\",\"rex\",\"suppressed_tail\",\"short_legs\",\"wikipedia_url\",\"hypoallergenic\",\"reference_image_id\"]}\r",
+									"\r",
+									"\r",
+									"pm.variables.set(\"schema\", schema);\r",
+									"try {\r",
+									"    var schema = pm.variables.get(\"schema\");\r",
+									"  \r",
+									"    if(schema) {\r",
+									"        const jsonData = pm.response.json();\r",
+									"        if(jsonData) {\r",
+									"            var Ajv = require('ajv');\r",
+									"            ajv = new Ajv({ logger: console, allErrors: true });\r",
+									"  \r",
+									"            pm.test('Schema is valid', function() {\r",
+									"                var result = tv4.validateMultiple(jsonData, schema);\r",
+									"                console.log(result);\r",
+									"                pm.expect(result.valid).to.be.true;\r",
+									"            });\r",
+									"       }\r",
+									"    }\r",
+									"}\r",
+									"catch(e) {\r",
+									"    console.log(e);\r",
+									"}\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "4865070-0fd6ee72-11e6-4c8d-94f3-fff0b41be085",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -2584,23 +2626,21 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{YOUR-API-KEY}}",
+								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "{{endpoint}}v1/breeds/:breed_id",
+							"raw": "{{endpoint}}v1/breeds/abob",
 							"host": [
 								"{{endpoint}}v1"
 							],
 							"path": [
 								"breeds",
-								":breed_id"
-							],
-							"variable": [
-								{
-									"id": "12ec1366-0ff8-4be6-bf7a-d0554515ab57",
-									"key": "breed_id",
-									"value": ""
-								}
+								"abob"
 							]
 						}
 					},
