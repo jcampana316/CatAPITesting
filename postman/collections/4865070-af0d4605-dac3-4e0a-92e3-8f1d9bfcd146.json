@@ -1571,6 +1571,10 @@
 							"script": {
 								"id": "a66e5a63-6e8b-4983-90ee-86a6b7955e22",
 								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
 									"var schema = {\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"title\":\"Generated schema for Root\",\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"width\":{\"type\":\"number\"},\"height\":{\"type\":\"number\"},\"original_filename\":{\"type\":\"string\"},\"pending\":{\"type\":\"number\"},\"approved\":{\"type\":\"number\"}},\"required\":[\"id\",\"url\",\"width\",\"height\",\"original_filename\",\"pending\",\"approved\"]}\r",
 									"\r",
 									"\r",
