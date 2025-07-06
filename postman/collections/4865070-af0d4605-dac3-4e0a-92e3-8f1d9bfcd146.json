@@ -987,7 +987,7 @@
 									"});\r",
 									"\r",
 									"//\r",
-									"pm.test(\"Breed boolean validadtion, quantity of attributes\", function () {    \r",
+									"pm.test(\"Breed boolean validation, quantity of attributes\", function () {    \r",
 									"        var jsonDataArray;\r",
 									"        for ( var i=0; i < jsonData.length; i++  ){\r",
 									"                jsonDataArray = jsonData[i];\r",
