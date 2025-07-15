@@ -10,7 +10,7 @@
 			"name": "Images",
 			"item": [
 				{
-					"name": "/images/search",
+					"name": "Search Images",
 					"event": [
 						{
 							"listen": "test",
