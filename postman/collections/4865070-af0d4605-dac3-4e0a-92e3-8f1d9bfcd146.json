@@ -1987,7 +1987,7 @@
 			"name": "Favourites",
 			"item": [
 				{
-					"name": "/favourites",
+					"name": "Search Favourites",
 					"id": "4865070-1aaaf368-663b-4582-90e5-babac87d06e1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
