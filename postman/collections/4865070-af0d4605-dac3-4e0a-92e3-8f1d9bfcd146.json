@@ -603,7 +603,7 @@
 					]
 				},
 				{
-					"name": "Get Image by Id - with Breed",
+					"name": "Search Image by Id - with Breed",
 					"event": [
 						{
 							"listen": "test",
