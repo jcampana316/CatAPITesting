@@ -35,12 +35,12 @@
 									"});",
 									"",
 									"const index = Math.trunc( Math.random()*jsonData.length);",
-									"",
+									"var item;",
 									"",
 									"//depending of Breed value, validate Id exists  ",
 									"pm.test(\"Breed boolean validadtion, quantity of attributes\", function () {",
 									"        var jsonDataArray;",
-									"        var item;",
+									"        ",
 									"        for ( var i=0; i < jsonData.length; i++  ){",
 									"                jsonDataArray = jsonData[i];",
 									"                for( var j = 0; j<jsonDataArray.length; j++ ) {",
@@ -1086,13 +1086,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{endpoint}}v1/images/MK-sYESvO",
+							"raw": "{{endpoint}}v1/images/{{IdBreed}}",
 							"host": [
 								"{{endpoint}}v1"
 							],
 							"path": [
 								"images",
-								"MK-sYESvO"
+								"{{IdBreed}}"
 							],
 							"query": [
 								{
@@ -4524,6 +4524,10 @@
 			"key": "limit",
 			"value": "20",
 			"type": "string"
+		},
+		{
+			"key": "IdBreed",
+			"value": ""
 		}
 	]
 }
