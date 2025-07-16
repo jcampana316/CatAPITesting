@@ -421,6 +421,417 @@
 					]
 				},
 				{
+					"name": "Search Images Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b91e922b-3642-4a56-9a3b-89895414ed99",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"response is ok\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"response should be okay to process\", function () {  ",
+									"    pm.response.to.not.be.error; ",
+									"    pm.response.to.not.have.jsonBody(\"\"); ",
+									"    pm.response.to.not.have.jsonBody(\"error\"); ",
+									"});",
+									"",
+									"//JC316",
+									"pm.test(\"response have data\", function () { ",
+									"     pm.expect(jsonData).to.not.have.lengthOf(0);",
+									"});",
+									"",
+									"//depending of Breed value, validate Id exists  ",
+									"pm.test(\"Breed boolean validadtion, quantity of attributes\", function () {",
+									"    if (  pm.globals.get('certVal')   == true )",
+									"    {",
+									"        var jsonDataArray;",
+									"        for ( var i=0; i < jsonData.length; i++  ){",
+									"                jsonDataArray = jsonData[i];",
+									"                for( var j = 0; j<jsonDataArray.length; j++ ) {",
+									"                    jsonDataArray[i].id.to.not.be(null);",
+									"                }",
+									"        }",
+									"    }",
+									"//no breed --> Id is null ",
+									"    else",
+									"    {",
+									"        var jsonDataArray;",
+									"        for ( vari=0; i < jsonData.length; i++  ){",
+									"                jsonDataArray = jsonData[i];",
+									"                for( var j = 0; j<jsonDataArray.length; j++ ){",
+									"                    jsonDataArray[i].breeds.to.be(null);",
+									"                }",
+									"        }",
+									"    }",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "d15aa967-3bec-4031-b4b4-9f28e23ded12",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "4865070-2535d6b0-a48d-4e28-a989-f5054786008e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{YOUR-API-KEY}}",
+								"description": "[optional] without it only the a basic set of images can be searched"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}v1/images/search?size=med&mime_types=jpg&format=json&order=RANDOM&page=0&limit={{limit}}&has_breeds={{certVal}}",
+							"host": [
+								"{{endpoint}}v1"
+							],
+							"path": [
+								"images",
+								"search"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "med",
+									"description": "[optional] thumb , small, med or full - small is perfect for Discord"
+								},
+								{
+									"key": "mime_types",
+									"value": "jpg",
+									"description": "[optional] a comma separated strig of types to return e.g. jpg,png for static, or gif for gifs"
+								},
+								{
+									"key": "format",
+									"value": "json",
+									"description": "[optional] json | src"
+								},
+								{
+									"key": "order",
+									"value": "RANDOM",
+									"description": "[optional] default:RANDOM - RANDOM | ASC | DESC"
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"description": "[optional] paginate through results"
+								},
+								{
+									"key": "include_breeds",
+									"value": "1",
+									"description": "[optional] default to true. Adds the 'breed' object ot the image, only if an api",
+									"disabled": true
+								},
+								{
+									"key": "include_categories",
+									"value": "1",
+									"description": "[optional] default to true. Adds the 'breed' object ot the image, only if an api",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "{{limit}}"
+								},
+								{
+									"key": "has_breeds",
+									"value": "{{certVal}}"
+								}
+							]
+						},
+						"description": "Searchs all approved images. Default is to reutrn RANDOM images, but with an API-Key you can use 'order=DESC' or 'order=ASC' along with the 'page' and 'limit' parameters to paginate through them in the order they were approved.\n\nPagination-Count, Pagination-Page, and Pagination-Limit headers are present in the response so you know the total number of images that can be paginated through for the passed search filters."
+					},
+					"response": [
+						{
+							"id": "4865070-b2e0e65f-2386-46da-b1b3-e88de78f233b",
+							"name": "/images/search",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{YOUR-API-KEY}}",
+										"description": "[optional] without it only the a basic set of images can be searched"
+									}
+								],
+								"url": {
+									"raw": "{{endpoint}}v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1",
+									"host": [
+										"{{endpoint}}v1"
+									],
+									"path": [
+										"images",
+										"search"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "med",
+											"description": "[optional] thumb , small, med or full - small is perfect for Discord"
+										},
+										{
+											"key": "mime_types",
+											"value": "jpg",
+											"description": "[optional] a comma separated strig of types to return e.g. jpg,png for static, or gif for gifs"
+										},
+										{
+											"key": "format",
+											"value": "json",
+											"description": "[optional] json | src"
+										},
+										{
+											"key": "has_breeds",
+											"value": "true",
+											"description": "[optional] - only return images with breed data"
+										},
+										{
+											"key": "order",
+											"value": "RANDOM",
+											"description": "[optional] default:RANDOM - RANDOM | ASC | DESC"
+										},
+										{
+											"key": "page",
+											"value": "0",
+											"description": "[optional] paginate through results"
+										},
+										{
+											"key": "limit",
+											"value": "1",
+											"description": "[optional] number of results to return, up to 25 with a valid API-Key"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "141",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Aug 2018 12:40:57 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.33 (Amazon)",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains",
+									"name": "Strict-Transport-Security",
+									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+								},
+								{
+									"key": "Vary",
+									"value": "Origin",
+									"name": "Vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"name": "X-Content-Type-Options",
+									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off",
+									"name": "X-DNS-Prefetch-Control",
+									"description": "Custom header"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen",
+									"name": "X-Download-Options",
+									"description": "Custom header"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN",
+									"name": "X-Frame-Options",
+									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"name": "X-XSS-Protection",
+									"description": "Cross-site scripting (XSS) filter"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n  {\n    \"id\": \"Hylo4Snaf\",\n    \"url\": \"https://cdn.thedogapi.com/images/Hylo4Snaf.jpeg\",\n    \"width\": 1200,\n    \"height\": 922,\n    \"mime_type\": \"image/jpeg\",\n    \"breeds\": [\n      {\n        \"id\": 235,\n        \"name\": \"Spanish Water Dog\",\n        \"weight\": \" 30 to 50 pounds\",\n        \"height\": \"16 to 20 inches at the shoulder\",\n        \"life_span\": \"12 to 15 years\",\n        \"breed_group\": \"Sporting\"\n      }\n    ],\n    \"categories\": []\n  },\n  {\n    \"id\": \"Hylo4Snaf\",\n    \"url\": \"https://cdn.thedogapi.com/images/Hylo4Snaf.jpeg\",\n    \"width\": 1200,\n    \"height\": 922,\n    \"mime_type\": \"image/jpeg\",\n    \"breeds\": [\n      {\n        \"id\": 235,\n        \"name\": \"Spanish Water Dog\",\n        \"weight\": \" 30 to 50 pounds\",\n        \"height\": \"16 to 20 inches at the shoulder\",\n        \"life_span\": \"12 to 15 years\",\n        \"breed_group\": \"Sporting\"\n      }\n    ],\n    \"categories\": []\n  }\n]"
+						},
+						{
+							"id": "4865070-81a48e21-8dc5-4d57-bb1e-1f2aa3772a75",
+							"name": "/images/search",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "x-api-key",
+										"value": "YOUR-API-KEY"
+									}
+								],
+								"url": {
+									"raw": "{{endpoint}}v1/images/search",
+									"host": [
+										"{{endpoint}}v1"
+									],
+									"path": [
+										"images",
+										"search"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "post-check=0, pre-check=0",
+									"name": "Cache-Control",
+									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "318",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 May 2018 05:20:42 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Expires",
+									"value": "Tue, 03 Jul 2001 06:00:00 GMT",
+									"name": "Expires",
+									"description": "Gives the date/time after which the response is considered stale"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Sun May 20 2018 15:20:42 GMT+1000 (AEST)",
+									"name": "Last-Modified",
+									"description": "The last modified date for the requested object, in RFC 2822 format"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin",
+									"name": "Vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "66ms",
+									"name": "X-Response-Time",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "200003076-0f25be261a93d645f5dc8721dcb7ca9d",
+									"key": "addonLicense"
+								},
+								{
+									"expires": "Invalid Date",
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "2",
+									"key": "addonVariant"
+								},
+								{
+									"expires": "Invalid Date",
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "au",
+									"key": "addonRegion"
+								}
+							],
+							"responseTime": null,
+							"body": "[{\"id\":\"Hylo4Snaf\",\"url\":\"https://cdn.thedogapi.com/images/Hylo4Snaf.jpeg\",\"width\":1200,\"height\":922,\"mime_type\":\"image/jpeg\",\"breeds\":[{\"id\":235,\"name\":\"Spanish Water Dog\",\"weight\":\" 30 to 50 pounds\",\"height\":\"16 to 20 inches at the shoulder\",\"life_span\":\"12 to 15 years\",\"breed_group\":\"Sporting\"}],\"categories\":[]}]"
+						}
+					]
+				},
+				{
 					"name": "Seacrh Image by Id - no breed",
 					"event": [
 						{
