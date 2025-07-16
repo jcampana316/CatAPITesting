@@ -38,6 +38,7 @@
 									"const index = Math.trunc(Math.random() * jsonData.length);",
 									"var item = \"\";",
 									"//Validate ID withinn Breed array is not null ",
+									"//get random Id breed for further testing",
 									"pm.test(\"Validate attributes are not null\", function () {",
 									"    var jsonDataArray;",
 									"    for (var i = 0; i < jsonData.length; i++) {",
@@ -63,9 +64,9 @@
 									"",
 									"*/",
 									"",
-									"console.log(\"index :\" + index);",
+									"",
 									"pm.collectionVariables.set(\"IdBreed\", item);",
-									"console.log(\"IdBreed :\" + pm.collectionVariables.get('IdBreed'));"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
