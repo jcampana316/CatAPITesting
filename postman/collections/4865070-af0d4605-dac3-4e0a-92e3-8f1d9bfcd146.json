@@ -508,7 +508,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{endpoint}}v1/images/search?size=med&mime_types=jpg&format=json&order=RANDOM&page=0&limit={{limit}}&has_breeds={{certVal}}",
+							"raw": "{{endpoint}}v1/images/search?size=med&mime_types=jpg&format=json&order=RANDOM&page=0&limit={{limit}}&has_breeds=false",
 							"host": [
 								"{{endpoint}}v1"
 							],
@@ -560,7 +560,7 @@
 								},
 								{
 									"key": "has_breeds",
-									"value": "{{certVal}}"
+									"value": "false"
 								}
 							]
 						},
