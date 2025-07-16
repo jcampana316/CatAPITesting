@@ -467,6 +467,8 @@
 									"        }",
 									"    ",
 									"});",
+									"",
+									"pm.collectionVariables.set(\"IdNoBreed\", item);",
 									""
 								],
 								"type": "text/javascript",
