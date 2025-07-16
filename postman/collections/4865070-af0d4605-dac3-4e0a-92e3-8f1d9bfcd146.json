@@ -38,7 +38,7 @@
 									"const item = \"\";",
 									"",
 									"//depending of Breed value, validate Id exists  ",
-									"pm.test(\"Breed boolean validadtion, quantity of attributes\", function () {",
+									"pm.test(\"Breed validation,  attributes are not null\", function () {",
 									"        var jsonDataArray;        ",
 									"        for ( var i=0; i < jsonData.length; i++  ){",
 									"                jsonDataArray = jsonData[i];",
