@@ -47,7 +47,7 @@
 									"});",
 									"",
 									"const index = Math.trunc( Math.random()*jsonData.length);",
-									"const item = \"\";",
+									"var item = \"\";",
 									"",
 									"pm.test(\"Get random id for variable\", function () {        ",
 									"        for ( var i=0; i < jsonData.length; i++  ){",
