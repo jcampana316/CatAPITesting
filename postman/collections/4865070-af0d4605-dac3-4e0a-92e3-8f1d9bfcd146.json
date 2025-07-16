@@ -49,6 +49,8 @@
 									"                }",
 									"        }  ",
 									"});",
+									"",
+									"pm.collectionVariables.set(\"IdBreed\", item);",
 									""
 								],
 								"type": "text/javascript",
