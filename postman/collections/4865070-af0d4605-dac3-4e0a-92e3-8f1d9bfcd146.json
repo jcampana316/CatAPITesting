@@ -832,7 +832,7 @@
 					]
 				},
 				{
-					"name": "Seacrh Image by Id - no breed",
+					"name": "Seacrh Image by Id - no Breed",
 					"event": [
 						{
 							"listen": "test",
