@@ -421,7 +421,7 @@
 					]
 				},
 				{
-					"name": "Search Images Copy",
+					"name": "Search Images - no Breed",
 					"event": [
 						{
 							"listen": "test",
