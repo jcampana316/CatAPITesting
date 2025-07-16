@@ -1422,13 +1422,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{endpoint}}v1/images/MK-sYESvO/analysis",
+							"raw": "{{endpoint}}v1/images/{{IdBreed}}/analysis",
 							"host": [
 								"{{endpoint}}v1"
 							],
 							"path": [
 								"images",
-								"MK-sYESvO",
+								"{{IdBreed}}",
 								"analysis"
 							],
 							"query": [
