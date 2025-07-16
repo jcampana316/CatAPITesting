@@ -838,7 +838,6 @@
 									"\r",
 									"\r",
 									"\r",
-									"\r",
 									"pm.variables.set(\"schema\", schema);\r",
 									"try {\r",
 									"    var schema = pm.variables.get(\"schema\");  \r",
