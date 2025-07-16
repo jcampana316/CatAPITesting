@@ -44,6 +44,7 @@
 									"                jsonDataArray = jsonData[i];",
 									"                for( var j = 0; j<jsonDataArray.length; j++ ) {",
 									"                    jsonDataArray[i].id.to.not.be(null);",
+									"                    console.log(\"index :\" + index);",
 									"                    if (i==index)",
 									"                        item = jsonDataArray[i].id;",
 									"                }",
