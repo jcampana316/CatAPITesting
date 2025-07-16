@@ -57,7 +57,7 @@
 									"        }  ",
 									"});",
 									"",
-									"",
+									"console.log(\"index :\" + index);",
 									"pm.collectionVariables.set(\"IdBreed\", item);",
 									"console.log(\"IdBreed :\" +  pm.collectionVariables.get('IdBreed') );"
 								],
