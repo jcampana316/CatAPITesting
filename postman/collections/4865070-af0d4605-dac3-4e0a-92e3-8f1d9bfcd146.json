@@ -10,7 +10,7 @@
 			"name": "Images",
 			"item": [
 				{
-					"name": "Search Images",
+					"name": "Search Images - with Breed",
 					"event": [
 						{
 							"listen": "test",
