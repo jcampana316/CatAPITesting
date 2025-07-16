@@ -52,19 +52,6 @@
 									"    }",
 									"});",
 									"",
-									"",
-									"/*",
-									"pm.test(\"Get random id for variable\", function () {",
-									"    for (var i = 0; i < jsonData.length; i++) {",
-									"        if (index == i) {",
-									"            item = jsonData[i].id;",
-									"        }",
-									"    }",
-									"});",
-									"",
-									"*/",
-									"",
-									"",
 									"pm.collectionVariables.set(\"IdBreed\", item);",
 									""
 								],
@@ -4549,6 +4536,10 @@
 		},
 		{
 			"key": "IdBreed",
+			"value": ""
+		},
+		{
+			"key": "IdNoBreed",
 			"value": ""
 		}
 	]
