@@ -434,7 +434,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b91e922b-3642-4a56-9a3b-89895414ed99",
+								"id": "c585fb78-5fed-4997-ab55-85e58b302568",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -453,10 +453,13 @@
 									"     pm.expect(jsonData).to.not.have.lengthOf(0);",
 									"});",
 									"",
+									"const index = Math.trunc(Math.random() * jsonData.length);",
+									"var item = \"\";",
+									"",
 									"//depending of Breed value, validate Id exists  ",
 									"pm.test(\"Breed boolean validadtion, quantity of attributes\", function () {    ",
 									"        var jsonDataArray;",
-									"        for ( vari=0; i < jsonData.length; i++  ){",
+									"        for ( var i=0; i < jsonData.length; i++  ){",
 									"                jsonDataArray = jsonData[i];",
 									"                for( var j = 0; j<jsonDataArray.length; j++ ){",
 									"                    jsonDataArray[i].breeds.to.be(null);",
@@ -473,7 +476,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "d15aa967-3bec-4031-b4b4-9f28e23ded12",
+								"id": "102a8767-9bca-45ff-b72b-ef253aa5ea25",
 								"exec": [
 									""
 								],
