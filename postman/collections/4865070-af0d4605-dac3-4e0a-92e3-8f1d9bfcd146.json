@@ -40,7 +40,7 @@
 									"//depending of Breed value, validate Id exists  ",
 									"pm.test(\"Breed boolean validadtion, quantity of attributes\", function () {",
 									"        var jsonDataArray;",
-									"        const item;",
+									"        var item;",
 									"        for ( var i=0; i < jsonData.length; i++  ){",
 									"                jsonDataArray = jsonData[i];",
 									"                for( var j = 0; j<jsonDataArray.length; j++ ) {",
