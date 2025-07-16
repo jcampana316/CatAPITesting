@@ -34,7 +34,7 @@
 									"     pm.expect(jsonData).to.not.have.lengthOf(0);",
 									"});",
 									"",
-									"const index = Math.trunc( Math.random()*jsonData.response.length);",
+									"const index = Math.trunc( Math.random()*jsonData.response.length());",
 									"",
 									"",
 									"//depending of Breed value, validate Id exists  ",
