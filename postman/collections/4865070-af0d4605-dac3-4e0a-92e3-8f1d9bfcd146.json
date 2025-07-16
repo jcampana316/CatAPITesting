@@ -832,188 +832,6 @@
 					]
 				},
 				{
-					"name": "Seacrh Image by Id - no Breed",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "a39db8bd-633c-422e-bfc8-302e89ece18c",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"\r",
-									"// validate Json Schema\r",
-									"var schema = {\r",
-									"    \"$schema\": \"http://json-schema.org/draft-06/schema#\",\r",
-									"    \"$ref\": \"#/definitions/Welcome4\",\r",
-									"    \"definitions\": {\r",
-									"        \"Welcome4\": {\r",
-									"            \"type\": \"object\",\r",
-									"            \"additionalProperties\": false,\r",
-									"            \"properties\": {\r",
-									"                \"id\": {\r",
-									"                    \"type\": \"string\"\r",
-									"                },\r",
-									"                \"url\": {\r",
-									"                    \"type\": \"string\",\r",
-									"                    \"format\": \"uri\",\r",
-									"                    \"qt-uri-protocols\": [\r",
-									"                        \"https\"\r",
-									"                    ],\r",
-									"                    \"qt-uri-extensions\": [\r",
-									"                        \".jpg\"\r",
-									"                    ]\r",
-									"                },\r",
-									"                \"width\": {\r",
-									"                    \"type\": \"integer\"\r",
-									"                },\r",
-									"                \"height\": {\r",
-									"                    \"type\": \"integer\"\r",
-									"                }\r",
-									"            },\r",
-									"            \"required\": [\r",
-									"                \"height\",\r",
-									"                \"id\",\r",
-									"                \"url\",\r",
-									"                \"width\"\r",
-									"            ],\r",
-									"            \"title\": \"Welcome4\"\r",
-									"        }\r",
-									"    }\r",
-									"}\r",
-									"\r",
-									"pm.variables.set(\"schema\", schema);\r",
-									"try {\r",
-									"    var schema = pm.variables.get(\"schema\");\r",
-									"  \r",
-									"    if(schema) {\r",
-									"        const jsonData = pm.response.json();\r",
-									"        if(jsonData) {\r",
-									"            var Ajv = require('ajv');\r",
-									"            ajv = new Ajv({ logger: console, allErrors: true });\r",
-									"  \r",
-									"            pm.test('Schema is valid', function() {\r",
-									"                var result = tv4.validateMultiple(jsonData, schema);\r",
-									"                console.log(result);\r",
-									"                pm.expect(result.valid).to.be.true;\r",
-									"            });\r",
-									"       }\r",
-									"    }\r",
-									"}\r",
-									"catch(e) {\r",
-									"    console.log(e);\r",
-									"}\r",
-									"\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "4865070-4e3e3bb2-fb96-4352-a4c2-41c621d1b08f",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-api-key",
-								"value": "{{YOUR-API-KEY}}",
-								"description": "[optional]  will save this request to your account analytics\n"
-							}
-						],
-						"url": {
-							"raw": "{{endpoint}}v1/images/cnb",
-							"host": [
-								"{{endpoint}}v1"
-							],
-							"path": [
-								"images",
-								"cnb"
-							],
-							"query": [
-								{
-									"key": "sub_id",
-									"value": "",
-									"description": "[optional] if you want to save this request to your account stats",
-									"disabled": true
-								}
-							]
-						},
-						"description": "Return 1 image matchin the id passed."
-					},
-					"response": [
-						{
-							"id": "4865070-ad2c1c85-f8ba-44dd-b2a2-4f8737b36606",
-							"name": "/images/:image_id",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{endpoint}}v1/images/BkIEhN3pG",
-									"host": [
-										"{{endpoint}}v1"
-									],
-									"path": [
-										"images",
-										"BkIEhN3pG"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Connection",
-									"value": "keep-alive",
-									"name": "Connection",
-									"description": "Options that are desired for the connection"
-								},
-								{
-									"key": "Content-Length",
-									"value": "158",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 13 May 2018 11:59:07 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin",
-									"name": "Vary",
-									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
-								},
-								{
-									"key": "X-Response-Time",
-									"value": "71ms",
-									"name": "X-Response-Time",
-									"description": "Custom header"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "{\"id\":\"BkIEhN3pG\",\"url\":\"\",\"width\":912,\"height\":1024,\"mime_type\":\"image/jpeg\",\"breeds\":[{\"id\":10,\"name\":\"American Bulldog\"}],\"categories\":[],\"breed_ids\":\"10\"}"
-						}
-					]
-				},
-				{
 					"name": "Search Image by Id - with Breed",
 					"event": [
 						{
@@ -1309,6 +1127,188 @@
 					"response": [
 						{
 							"id": "4865070-b26c66e6-355c-4737-a064-cc778f32b30c",
+							"name": "/images/:image_id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}v1/images/BkIEhN3pG",
+									"host": [
+										"{{endpoint}}v1"
+									],
+									"path": [
+										"images",
+										"BkIEhN3pG"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "158",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 13 May 2018 11:59:07 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin",
+									"name": "Vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "71ms",
+									"name": "X-Response-Time",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\"id\":\"BkIEhN3pG\",\"url\":\"\",\"width\":912,\"height\":1024,\"mime_type\":\"image/jpeg\",\"breeds\":[{\"id\":10,\"name\":\"American Bulldog\"}],\"categories\":[],\"breed_ids\":\"10\"}"
+						}
+					]
+				},
+				{
+					"name": "Seacrh Image by Id - no Breed",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a39db8bd-633c-422e-bfc8-302e89ece18c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// validate Json Schema\r",
+									"var schema = {\r",
+									"    \"$schema\": \"http://json-schema.org/draft-06/schema#\",\r",
+									"    \"$ref\": \"#/definitions/Welcome4\",\r",
+									"    \"definitions\": {\r",
+									"        \"Welcome4\": {\r",
+									"            \"type\": \"object\",\r",
+									"            \"additionalProperties\": false,\r",
+									"            \"properties\": {\r",
+									"                \"id\": {\r",
+									"                    \"type\": \"string\"\r",
+									"                },\r",
+									"                \"url\": {\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"format\": \"uri\",\r",
+									"                    \"qt-uri-protocols\": [\r",
+									"                        \"https\"\r",
+									"                    ],\r",
+									"                    \"qt-uri-extensions\": [\r",
+									"                        \".jpg\"\r",
+									"                    ]\r",
+									"                },\r",
+									"                \"width\": {\r",
+									"                    \"type\": \"integer\"\r",
+									"                },\r",
+									"                \"height\": {\r",
+									"                    \"type\": \"integer\"\r",
+									"                }\r",
+									"            },\r",
+									"            \"required\": [\r",
+									"                \"height\",\r",
+									"                \"id\",\r",
+									"                \"url\",\r",
+									"                \"width\"\r",
+									"            ],\r",
+									"            \"title\": \"Welcome4\"\r",
+									"        }\r",
+									"    }\r",
+									"}\r",
+									"\r",
+									"pm.variables.set(\"schema\", schema);\r",
+									"try {\r",
+									"    var schema = pm.variables.get(\"schema\");\r",
+									"  \r",
+									"    if(schema) {\r",
+									"        const jsonData = pm.response.json();\r",
+									"        if(jsonData) {\r",
+									"            var Ajv = require('ajv');\r",
+									"            ajv = new Ajv({ logger: console, allErrors: true });\r",
+									"  \r",
+									"            pm.test('Schema is valid', function() {\r",
+									"                var result = tv4.validateMultiple(jsonData, schema);\r",
+									"                console.log(result);\r",
+									"                pm.expect(result.valid).to.be.true;\r",
+									"            });\r",
+									"       }\r",
+									"    }\r",
+									"}\r",
+									"catch(e) {\r",
+									"    console.log(e);\r",
+									"}\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "4865070-4e3e3bb2-fb96-4352-a4c2-41c621d1b08f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{YOUR-API-KEY}}",
+								"description": "[optional]  will save this request to your account analytics\n"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}v1/images/cnb",
+							"host": [
+								"{{endpoint}}v1"
+							],
+							"path": [
+								"images",
+								"cnb"
+							],
+							"query": [
+								{
+									"key": "sub_id",
+									"value": "",
+									"description": "[optional] if you want to save this request to your account stats",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Return 1 image matchin the id passed."
+					},
+					"response": [
+						{
+							"id": "4865070-ad2c1c85-f8ba-44dd-b2a2-4f8737b36606",
 							"name": "/images/:image_id",
 							"originalRequest": {
 								"method": "GET",
