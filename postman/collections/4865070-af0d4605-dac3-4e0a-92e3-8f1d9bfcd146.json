@@ -4102,11 +4102,12 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "795e4c24-da10-4986-ba63-3c1db67e6737",
+				"id": "66204d17-8d52-47f6-bb4c-9d48c9d966e0",
 				"type": "text/javascript",
 				"exec": [
 					"var arrayCert = [true, false];\r",
 					"pm.globals.set(\"certVal\",  arrayCert[Math.floor(Math.random()*arrayCert.length)]);\r",
+					"\r",
 					""
 				]
 			}
@@ -4114,7 +4115,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "f6d63b3d-cb18-4510-a7cc-f0f105acde01",
+				"id": "9e7e25e0-fdb1-42a7-86ba-b9da192871bb",
 				"type": "text/javascript",
 				"exec": [
 					""
