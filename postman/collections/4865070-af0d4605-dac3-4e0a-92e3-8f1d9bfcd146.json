@@ -52,7 +52,7 @@
 									"});",
 									"",
 									"pm.collectionVariables.set(\"IdBreed\", item);",
-									""
+									"console.log(\"IdBrred :\" + pm.collectionVariables.get(\"IdBreed\"));"
 								],
 								"type": "text/javascript",
 								"packages": {}
