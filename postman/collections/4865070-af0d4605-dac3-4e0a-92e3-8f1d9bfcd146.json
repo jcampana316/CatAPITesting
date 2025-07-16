@@ -1290,13 +1290,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{endpoint}}v1/images/cnb",
+							"raw": "{{endpoint}}v1/images/{{IdNoBreed}}",
 							"host": [
 								"{{endpoint}}v1"
 							],
 							"path": [
 								"images",
-								"cnb"
+								"{{IdNoBreed}}"
 							],
 							"query": [
 								{
