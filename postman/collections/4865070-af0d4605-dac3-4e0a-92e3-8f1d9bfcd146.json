@@ -1753,7 +1753,7 @@
 					]
 				},
 				{
-					"name": "/images/upload",
+					"name": "Upload Image",
 					"event": [
 						{
 							"listen": "test",
