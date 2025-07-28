@@ -1991,7 +1991,7 @@
 					]
 				},
 				{
-					"name": "/images/:image_id",
+					"name": "Delete Image by Id",
 					"id": "4865070-1dc2835a-af1f-42a6-83cc-496053eb4c07",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
