@@ -2331,7 +2331,7 @@
 					]
 				},
 				{
-					"name": "/favourites/:favourite_id",
+					"name": "Get Favorite by id",
 					"id": "4865070-972a5510-3588-4d83-ba9c-88e484a63326",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
